@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Executivo Liqi - Claude do Luiz</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.7; }
+        .hero { background: linear-gradient(135deg, #1a2e1a 0%, #163e2e 50%, #0f604a 100%); padding: 80px 40px; text-align: center; border-bottom: 3px solid #45e9a0; }
+        .hero h1 { font-size: 2.8rem; color: #fff; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 1.3rem; color: #a0a0a0; }
+        .hero .author { margin-top: 20px; color: #45e9a0; font-weight: 600; font-size: 1.1rem; }
+        .hero .date { color: #666; margin-top: 5px; }
+        .nav-links { text-align: center; padding: 20px; background: #111; }
+        .nav-links a { color: #45e9a0; text-decoration: none; margin: 0 15px; font-weight: 600; }
+        .nav-links a:hover { text-decoration: underline; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .section { margin-bottom: 50px; }
+        .section h2 { font-size: 1.8rem; color: #45e9a0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #333; }
+        .section h3 { font-size: 1.3rem; color: #81c784; margin: 20px 0 10px; }
+        .highlight-box { background: #1a2e1a; border-left: 4px solid #45e9a0; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .highlight-box.red { border-color: #e94560; }
+        .highlight-box.yellow { border-color: #ff9800; }
+        .highlight-box.blue { border-color: #2196f3; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .metric-card { background: #1a2e1a; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #333; }
+        .metric-card .value { font-size: 2rem; font-weight: 700; color: #45e9a0; }
+        .metric-card .label { font-size: 0.85rem; color: #888; margin-top: 5px; }
+        .competitor { display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; padding: 15px; background: #111; border-radius: 8px; border-left: 3px solid #45e9a0; }
+        .competitor .content h4 { color: #fff; margin-bottom: 5px; }
+        .competitor .content p { color: #aaa; font-size: 0.95rem; }
+        .competitor .volume { color: #e94560; font-weight: 600; font-size: 0.9rem; }
+        .gap-card { padding: 20px; background: #111; border-radius: 8px; margin: 15px 0; }
+        .gap-card h4 { margin-bottom: 10px; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-right: 5px; }
+        .tag.red { background: #e9456033; color: #e94560; }
+        .tag.yellow { background: #ff980033; color: #ff9800; }
+        .tag.green { background: #4caf5033; color: #4caf50; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #222; }
+        th { color: #45e9a0; font-size: 0.85rem; text-transform: uppercase; }
+        td { color: #ccc; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: #333; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #45e9a0; }
+        .timeline-item h4 { color: #81c784; }
+        .timeline-item p { color: #aaa; margin-top: 5px; }
+        .footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; }
+        ul { padding-left: 20px; }
+        ul li { margin: 8px 0; color: #ccc; }
+        strong { color: #fff; }
+        .question-box { background: #1a1a2e; border: 2px solid #ff9800; padding: 25px; border-radius: 8px; text-align: center; margin: 30px 0; }
+        .question-box h3 { color: #ff9800; margin-bottom: 15px; }
+        .question-box .option { display: inline-block; margin: 10px; padding: 15px 25px; background: #111; border-radius: 8px; border: 1px solid #333; }
+        .question-box .option h4 { color: #45e9a0; }
+        .question-box .option p { color: #888; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Relatório Executivo Liqi</h1>
+        <p class="subtitle">O que falta para ser a maior empresa de tecnologia<br>de mercado de capitais do Brasil</p>
+        <p class="author">Por Claude do Luiz/Mr (Visão Externa)</p>
+        <p class="date">15 de Março de 2026</p>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Relatório Claude do Daniel</a>
+        <a href="claude-luiz.html">Meu Relatório</a>
+        <a href="analise-cruzada.html">Análise Cruzada</a>
+    </div>
+
+    <div class="container">
+        <!-- SITUAÇÃO ATUAL -->
+        <div class="section">
+            <h2>1. Onde a Liqi Está Hoje</h2>
+            <div class="highlight-box">
+                A Liqi ultrapassou <strong>US$100M em ativos tokenizados</strong> na XDC Network (jan/2026), tem o <strong>Itaú como segundo maior acionista</strong>, e está captando uma rodada de US$10M. Opera com ~30 funcionários num modelo híbrido B2B + B2C.
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">US$100M+</div>
+                    <div class="label">Ativos tokenizados (XDC)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">Itaú</div>
+                    <div class="label">2° maior acionista</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">US$10M</div>
+                    <div class="label">Rodada em andamento</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">TIDC</div>
+                    <div class="label">Protocolo proprietário</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAMPO DE BATALHA -->
+        <div class="section">
+            <h2>2. O Campo de Batalha — Concorrentes</h2>
+
+            <div class="competitor">
+                <div class="content">
+                    <h4>VERT Capital</h4>
+                    <p class="volume">R$ 3,84 BILHÕES em operações tokenizadas</p>
+                    <p>Maior tokenizador no XRPL. Clientes: Cargill, Santander, Raízen. A Liqi precisa multiplicar volume por 7x só pra alcançar a VERT.</p>
+                </div>
+            </div>
+
+            <div class="competitor">
+                <div class="content">
+                    <h4>Mercado Bitcoin</h4>
+                    <p class="volume">R$ 1B+ tokenizado | 4 milhões de clientes</p>
+                    <p>Presente em Portugal e Emirados. Multi-chain (Stellar, XRPL, Rootstock). Vantagem esmagadora em distribuição retail.</p>
+                </div>
+            </div>
+
+            <div class="competitor">
+                <div class="content">
+                    <h4>BEE4</h4>
+                    <p class="volume">Licença PLENA da CVM (fora do Sandbox) — abril/2025</p>
+                    <p>Única com mercado secundário regulado de ações tokenizadas. Nuclea como investidora. Vantagem regulatória incomparável.</p>
+                </div>
+            </div>
+
+            <div class="competitor">
+                <div class="content">
+                    <h4>Credix</h4>
+                    <p class="volume">US$ 165M captados (BTG Pactual/Pátria lideraram)</p>
+                    <p>IA + blockchain para crédito B2B. 10x mais capitalizada que a Liqi.</p>
+                </div>
+            </div>
+
+            <div class="competitor">
+                <div class="content">
+                    <h4>Hurst Capital</h4>
+                    <p class="volume">R$ 1B+ originado | 110K investidores | 110 países</p>
+                    <p>Maior ecossistema de ativos alternativos da América Latina.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box red">
+                <strong>Wildcard: A B3</strong> planeja lançar sua própria stablecoin BRL e plataforma de tokenização em 2026. Pode ser parceira ou destruidora de todos os players atuais.
+            </div>
+        </div>
+
+        <!-- BENCHMARKS INTERNACIONAIS -->
+        <div class="section">
+            <h2>3. Benchmarks Internacionais</h2>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">US$ 1,25B</div>
+                    <div class="label">Securitize (valuation)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">US$ 7,5B</div>
+                    <div class="label">iCapital (valuation)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">US$ 1B+</div>
+                    <div class="label">Centrifuge (TVL)</div>
+                </div>
+            </div>
+
+            <table>
+                <tr><th>Empresa</th><th>Modelo</th><th>Lição</th></tr>
+                <tr><td>Securitize (EUA)</td><td>Infraestrutura regulada</td><td>Virou plataforma que outros usam. Parceira da BlackRock (fundo BUIDL).</td></tr>
+                <tr><td>iCapital</td><td>Wealth management infra</td><td>US$ 945B em ativos servidos. O prêmio é ser a camada que outros dependem.</td></tr>
+                <tr><td>Centrifuge (DeFi)</td><td>Protocolo open-source</td><td>Parceira Janus Henderson e S&P. Protocolo > Produto.</td></tr>
+            </table>
+        </div>
+
+        <!-- 8 GAPS -->
+        <div class="section">
+            <h2>4. Os 8 Gaps Críticos</h2>
+
+            <div class="gap-card">
+                <h4><span class="tag red">GAP 1</span> Volume</h4>
+                <p>Liqi: ~US$100M. VERT: R$3,84B. MB: R$1B+. <strong>1-2 ordens de magnitude atrás.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Pipeline de emissões grandes (R$100M+), não só ofertas retail de R$25.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag red">GAP 2</span> Capital</h4>
+                <p>Liqi: US$10M total. Credix: US$165M. Securitize: US$469M. <strong>Precisa de pelo menos US$50-100M em growth capital.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Rodada atual como ponte para Series B robusta em 12-18 meses.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag red">GAP 3</span> Licença Plena CVM</h4>
+                <p>BEE4 é a única tokenizadora com licença plena fora do Sandbox. <strong>Quem tiver licença completa primeiro domina.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Priorizar obtenção de licença plena para emissão + negociação + depositária digital.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag red">GAP 4</span> Mercado Secundário</h4>
+                <p>Tokens sem liquidez são como imóvel sem porta de saída. <strong>Só BEE4 e Vórtx QR têm mercado secundário regulado.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Desenvolver ou licenciar mercado secundário. Sem isso, institucionais não entram.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag yellow">GAP 5</span> Distribuição Institucional</h4>
+                <p>Itaú é ótimo, mas um banco só não escala distribuição nacional. <strong>MB tem 4M de clientes.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: 3-5 parcerias com bancos/corretoras. White-label para assessores.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag yellow">GAP 6</span> Operação Industrial</h4>
+                <p>42 patrimônios com processos manuais e planilhas Excel. <strong>Isso é artesanal, não industrial.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Projeto 27→270 é a resposta certa. Prioridade #1 nos próximos 6 meses.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag yellow">GAP 7</span> Integração DREX/B3</h4>
+                <p>DREX (CBDC) e plataforma da B3 vão redefinir infraestrutura de settlement. <strong>Quem não estiver integrado fica de fora.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Participar pilotos DREX fase 2. Iniciar conversas com B3.</p>
+            </div>
+
+            <div class="gap-card">
+                <h4><span class="tag yellow">GAP 8</span> Multi-Asset Class</h4>
+                <p>Liqi foca em dívida. Hurst cobre royalties, precatórios, imóveis, O&G. <strong>Para ser a maior, precisa do espectro completo.</strong></p>
+                <p style="color: #45e9a0; margin-top: 8px;">Ação: Expandir para equity tokenizado e ativos alternativos em fases.</p>
+            </div>
+        </div>
+
+        <!-- PERGUNTA ESTRATÉGICA -->
+        <div class="section">
+            <h2>5. A Pergunta Estratégica Central</h2>
+
+            <div class="question-box">
+                <h3>A Liqi quer ser...</h3>
+                <div class="option">
+                    <h4>A) O Nubank da Tokenização</h4>
+                    <p>B2C, marca forte, milhões de investidores</p>
+                </div>
+                <div class="option" style="border-color: #45e9a0;">
+                    <h4>B) A Securitize Brasileira ✓</h4>
+                    <p>Infra B2B2C, bancos usam a plataforma por baixo</p>
+                </div>
+                <div class="option">
+                    <h4>C) A VERT 2.0</h4>
+                    <p>Máquina de volume institucional</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Recomendação: Opção B.</strong> É onde a Liqi tem vantagem (tech + regulação + Itaú) e é o modelo que gera mais valor. Securitize vale US$1,25B, iCapital vale US$7,5B. O retail pode ser um canal, mas não o core.
+            </div>
+        </div>
+
+        <!-- ROADMAP -->
+        <div class="section">
+            <h2>6. Roadmap Estratégico</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Fase 1 (0-6 meses): Sobreviver e Automatizar</h4>
+                    <p>Projeto 27→270, fechar rodada US$10M, eliminar dependência de planilhas Excel</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Fase 2 (6-12 meses): Escalar Volume</h4>
+                    <p>Pipeline R$100M+, API pública, 3 parcerias bancárias, solicitar licença plena CVM</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Fase 3 (12-24 meses): Construir Infraestrutura</h4>
+                    <p>Mercado secundário, white-label B2B2C, integração DREX/B3, Series B US$50-100M</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Fase 4 (24-36 meses): Dominar</h4>
+                    <p>Multi-asset, expansão LatAm, R$5B+ tokenizados, referência CVM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSÃO -->
+        <div class="section">
+            <h2>7. Conclusão</h2>
+            <div class="highlight-box">
+                <p>A Liqi tem os ingredientes certos — <strong>regulação, tecnologia proprietária, CEO técnico, Itaú</strong>. Mas está em desvantagem significativa em <strong>volume</strong> (7-38x atrás), <strong>capital</strong> (10-16x atrás) e <strong>licenciamento</strong> (BEE4 saiu na frente).</p>
+                <br>
+                <p>O projeto <strong>27→270</strong> é a alavanca mais poderosa no curto prazo — se funcionar, cria vantagem estrutural de custo que nenhum concorrente tem.</p>
+                <br>
+                <p>Para ser a maior, a Liqi precisa executar uma transição de <strong>empresa de serviço → empresa de plataforma</strong> nos próximos 24 meses e se posicionar como infraestrutura que bancos e corretoras usam — não competir com eles.</p>
+                <br>
+                <p><strong>O relógio está correndo. A B3 entra no mercado em 2026. Quem não tiver escala até lá será absorvido ou marginalizado.</strong></p>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center; padding: 30px; background: #1a2e1a; border-radius: 8px;">
+            <p style="color: #888;">Relatório baseado em pesquisa de mercado atualizada (dados 2025-2026)</p>
+            <p style="color: #45e9a0; margin-top: 10px; font-weight: 600;">Claude do Luiz/Mr — Visão Externa</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Liqi Digital Assets | Relatório gerado por Claude (Opus 4.6) | Março 2026</p>
+    </div>
+</body>
+</html>

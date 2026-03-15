@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Executivo Liqi - Claude do Daniel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.7; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 80px 40px; text-align: center; border-bottom: 3px solid #e94560; }
+        .hero h1 { font-size: 2.8rem; color: #fff; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 1.3rem; color: #a0a0a0; }
+        .hero .author { margin-top: 20px; color: #e94560; font-weight: 600; font-size: 1.1rem; }
+        .hero .date { color: #666; margin-top: 5px; }
+        .nav-links { text-align: center; padding: 20px; background: #111; }
+        .nav-links a { color: #e94560; text-decoration: none; margin: 0 15px; font-weight: 600; }
+        .nav-links a:hover { text-decoration: underline; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .section { margin-bottom: 50px; }
+        .section h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #333; }
+        .section h3 { font-size: 1.3rem; color: #64b5f6; margin: 20px 0 10px; }
+        .highlight-box { background: #1a1a2e; border-left: 4px solid #e94560; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .highlight-box.green { border-color: #4caf50; }
+        .highlight-box.yellow { border-color: #ff9800; }
+        .highlight-box.blue { border-color: #2196f3; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .metric-card { background: #1a1a2e; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #333; }
+        .metric-card .value { font-size: 2rem; font-weight: 700; color: #e94560; }
+        .metric-card .label { font-size: 0.85rem; color: #888; margin-top: 5px; }
+        .priority { display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; padding: 15px; background: #111; border-radius: 8px; }
+        .priority .icon { font-size: 1.5rem; min-width: 40px; text-align: center; }
+        .priority .content h4 { color: #fff; margin-bottom: 5px; }
+        .priority .content p { color: #aaa; font-size: 0.95rem; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-right: 5px; }
+        .tag.red { background: #e9456033; color: #e94560; }
+        .tag.yellow { background: #ff980033; color: #ff9800; }
+        .tag.green { background: #4caf5033; color: #4caf50; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #222; }
+        th { color: #e94560; font-size: 0.85rem; text-transform: uppercase; }
+        td { color: #ccc; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: #333; }
+        .timeline-item { position: relative; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #e94560; }
+        .timeline-item h4 { color: #64b5f6; }
+        .timeline-item p { color: #aaa; margin-top: 5px; }
+        .footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #222; }
+        ul { padding-left: 20px; }
+        ul li { margin: 8px 0; color: #ccc; }
+        strong { color: #fff; }
+        .vertical-card { background: #1a1a2e; border-radius: 8px; padding: 20px; margin: 15px 0; border: 1px solid #333; }
+        .vertical-card h4 { color: #64b5f6; margin-bottom: 10px; }
+        .vertical-card .revenue { color: #4caf50; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Relatório Executivo Liqi</h1>
+        <p class="subtitle">O que falta para ser a maior empresa de tecnologia<br>de mercado de capitais do Brasil</p>
+        <p class="author">Por Claude do Daniel (Visão Interna)</p>
+        <p class="date">15 de Março de 2026</p>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Meu Relatório</a>
+        <a href="claude-luiz.html">Relatório @claude do Luiz</a>
+        <a href="analise-cruzada.html">Análise Cruzada</a>
+    </div>
+
+    <div class="container">
+        <!-- SITUAÇÃO ATUAL -->
+        <div class="section">
+            <h2>1. Onde a Liqi Está Hoje</h2>
+            <div class="highlight-box green">
+                <strong>A Liqi atingiu break-even em março de 2026.</strong> Receita mensal ~R$ 1M, com projeção de R$ 20M anuais. O momento é de consolidação e escala.
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">R$ 20M</div>
+                    <div class="label">Receita projetada 2026</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">R$ 1,3B</div>
+                    <div class="label">Volume sob gestão</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">42</div>
+                    <div class="label">Patrimônios ativos</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">28</div>
+                    <div class="label">Funcionários</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">R$ 600M</div>
+                    <div class="label">Volume CaaS Q1/2026</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">4</div>
+                    <div class="label">Verticais operando</div>
+                </div>
+            </div>
+
+            <h3>Evolução de Receita</h3>
+            <table>
+                <tr><th>Ano</th><th>Receita</th><th>Crescimento</th></tr>
+                <tr><td>2023</td><td>R$ 1M</td><td>-</td></tr>
+                <tr><td>2024</td><td>R$ 3M</td><td>+200%</td></tr>
+                <tr><td>2025</td><td>~R$ 8M</td><td>+167%</td></tr>
+                <tr><td>2026 (proj.)</td><td>R$ 20M</td><td>+150%</td></tr>
+            </table>
+        </div>
+
+        <!-- 4 VERTICAIS -->
+        <div class="section">
+            <h2>2. As 4 Verticais</h2>
+
+            <div class="vertical-card">
+                <h4>CaaS (Crypto as a Service) — 40% da receita</h4>
+                <p class="revenue">~R$ 700K/mês | R$ 600M volume Q1</p>
+                <ul>
+                    <li>Clientes: Itaú (maior), Avenue, Porto Bank, Melios (Israel)</li>
+                    <li>Infraestrutura de negociação cripto para grandes instituições</li>
+                    <li>Dashboard Datadog compartilhado com Itaú</li>
+                    <li>CaaS V2 em homologação (desmembramento de spread)</li>
+                </ul>
+            </div>
+
+            <div class="vertical-card">
+                <h4>Securitizadora S2 CVM + Protocolo TDIC — 60% da receita</h4>
+                <p class="revenue">R$ 1,3B sob gestão | 42 patrimônios | Meta: 140</p>
+                <ul>
+                    <li>Licença S2 CVM obtida nov/2025 + Anbima homologada</li>
+                    <li>12 smart contracts EVM (ciclo completo)</li>
+                    <li>Clientes: Itaú BBA, ABC, BV, Milênio, Banco Fibra</li>
+                    <li>Liquidação via stablecoin BRLD</li>
+                </ul>
+            </div>
+
+            <div class="vertical-card">
+                <h4>Whitney — Diferencial Competitivo (IA)</h4>
+                <p class="revenue">5 operações ativas | 288 pessoas | 52 empresas monitoradas</p>
+                <ul>
+                    <li>Agente IA para monitoramento de operações CVM 160</li>
+                    <li>Integra emails, WhatsApp, reuniões; organiza documentos e alertas</li>
+                    <li>Clientes: Itaú (4 operações), ABC, VBSO</li>
+                    <li>Exemplo: Operação Neon — 107 participantes, 247 documentos, 19 versões da escritura</li>
+                </ul>
+            </div>
+
+            <div class="vertical-card">
+                <h4>Stablecoin BRLD — Novo (fase discovery)</h4>
+                <p class="revenue">Lançada jan/2026 | Rendimento 95% CDI</p>
+                <ul>
+                    <li>Stablecoin de reais lastreada em LFT</li>
+                    <li>Clientes testando: Melios (R$ 500k), Dito em negociação</li>
+                    <li>Lançamento "mar aberto" previsto final de abril 2026</li>
+                    <li>Consultoria jurídica: Pinheiro Neto</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- IMPACTO DA IA -->
+        <div class="section">
+            <h2>3. O Fator IA — Projeto 27→270</h2>
+            <div class="highlight-box blue">
+                <strong>A Liqi reduziu o time de 37→28 pessoas (-24%) SEM perder produtividade.</strong> O time de tech foi de 23→5 devs (redução de 78%). Custo total de IA: USD 3.500/mês — "ridículo" comparado ao valor gerado.
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="value">23→5</div>
+                    <div class="label">Devs (redução 78%)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">487</div>
+                    <div class="label">Entregas Daniel em 1 projeto</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">$3.5K</div>
+                    <div class="label">Custo IA/mês</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">1.5 dia</div>
+                    <div class="label">Central Liqi substituiu Zendesk</div>
+                </div>
+            </div>
+
+            <h3>Produtos Construídos com Claude Code</h3>
+            <ul>
+                <li><strong>Central Liqi</strong> — 7 módulos (Comercial, Compliance, Operação, Financeiro, Acionistas, Marketing, Admin). Substituiu Zendesk em 1.5 dias.</li>
+                <li><strong>Lia (Bot WhatsApp)</strong> — Agente de atendimento pós-liquidação. 600+ investidores atendidos. V11 do algoritmo.</li>
+                <li><strong>Sistema Roadmap/Kanban</strong> — Desenvolvido pela Debora com Claude Code. Substitui Jira (~R$ 10k/mês economia).</li>
+                <li><strong>RWA Monitor API</strong> — Volume corrigido de R$ 970M para R$ 1,2B.</li>
+            </ul>
+
+            <h3>Transformação de Velocidade</h3>
+            <table>
+                <tr><th>Antes</th><th>Depois (com IA)</th></tr>
+                <tr><td>5 minutos</td><td>1 segundo</td></tr>
+                <tr><td>10 minutos</td><td>1 minuto</td></tr>
+                <tr><td>1 dia</td><td>10 minutos</td></tr>
+                <tr><td>1 mês</td><td>1 dia</td></tr>
+            </table>
+        </div>
+
+        <!-- 5 GAPS CRÍTICOS -->
+        <div class="section">
+            <h2>4. Os 5 Gaps Críticos</h2>
+
+            <div class="priority">
+                <div class="icon">🔴</div>
+                <div class="content">
+                    <h4>1. Integridade Financeira <span class="tag red">URGENTE</span></h4>
+                    <p>R$ 5,6M registrado off-chain vs R$ 928K no banco = <strong>R$ 4,7M de discrepância</strong>. 17 carteiras BRLD orphan sem dono no blockchain. ~20% dos patrimônios desincronizados. Se auditores encontrarem, trava tudo.</p>
+                    <p><strong>Ação:</strong> Will batendo extratos Genial. Giovanni ajuda blockchain até sair (27/03).</p>
+                </div>
+            </div>
+
+            <div class="priority">
+                <div class="icon">🔴</div>
+                <div class="content">
+                    <h4>2. Time Tech Frágil <span class="tag red">RISCO</span></h4>
+                    <p>Giovanni sai dia 27/03. Sobra <strong>apenas Will como dev</strong>. Daniel gasta 80% em reuniões. Um dev doente = operação inteira para.</p>
+                    <p><strong>Ação:</strong> Contratar 1-2 devs juniores treinados em Claude Code (R$ 8-10k cada).</p>
+                </div>
+            </div>
+
+            <div class="priority">
+                <div class="icon">🟡</div>
+                <div class="content">
+                    <h4>3. Go-to-Market Fragmentado <span class="tag yellow">ESTRATÉGICO</span></h4>
+                    <p>4 verticais com vendas, pricing e clientes diferentes. Sem narrativa unificada. Vendas dependem demais do Daniel.</p>
+                    <p><strong>Ação:</strong> Posicionar como "Infraestrutura de Mercado de Capitais". Playbook de venda por vertical até fim de março.</p>
+                </div>
+            </div>
+
+            <div class="priority">
+                <div class="icon">🟡</div>
+                <div class="content">
+                    <h4>4. SCD até Dezembro <span class="tag yellow">REGULATÓRIO</span></h4>
+                    <p>Hoje depende de bancarizadores terceiros (BMP, K-Tech) = fricção + custo. Sem SCD, a Liqi não controla a cadeia completa.</p>
+                    <p><strong>Ação:</strong> Alocar 20% do time tech para SCD a partir de julho. Reunião com BC para timeline.</p>
+                </div>
+            </div>
+
+            <div class="priority">
+                <div class="icon">🟢</div>
+                <div class="content">
+                    <h4>5. Whitney como Moat <span class="tag green">DIFERENCIAL</span></h4>
+                    <p>Único produto que nenhum concorrente tem. Clientes pedem expansão (FIDICs, acompanhamento de lastro). Precisa virar case público.</p>
+                    <p><strong>Ação:</strong> Criar case studies (Neon, Itaú, ABC). Whitepaper. Monetizar em 2027.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUSTOS -->
+        <div class="section">
+            <h2>5. Estrutura de Custos</h2>
+            <table>
+                <tr><th>Serviço</th><th>Custo Mensal</th><th>Status</th></tr>
+                <tr><td>AWS</td><td>USD 13-14K (~R$ 77K)</td><td>Otimizando (era USD 29K)</td></tr>
+                <tr><td>Datadog</td><td>USD 3.600-3.800</td><td>Revisar (logs 18x acima do contratado)</td></tr>
+                <tr><td>Claude/IA</td><td>USD 3.000-3.500</td><td>"Ridículo" vs valor gerado</td></tr>
+                <tr><td>Railway</td><td>USD 124</td><td>Estável</td></tr>
+                <tr><td>Blockchain (Ankr+QuickNode)</td><td>USD ~1.000</td><td>A cancelar (usar RPC XDC direto)</td></tr>
+            </table>
+            <div class="highlight-box">
+                <strong>Orçamento reduzido de R$ 16M para R$ 12M</strong> — não é corte, é eficiência com IA.
+            </div>
+        </div>
+
+        <!-- PARCERIAS -->
+        <div class="section">
+            <h2>6. Parcerias e Rodada</h2>
+            <h3>Acionistas e Parceiros Estratégicos</h3>
+            <table>
+                <tr><th>Parceiro</th><th>Tipo</th><th>Status</th></tr>
+                <tr><td>Itaú BBA</td><td>Acionista + Cliente</td><td>2° maior acionista. R$ 600M+ CaaS Q1</td></tr>
+                <tr><td>Pátria</td><td>Acionista + VC</td><td>Rodada em andamento</td></tr>
+                <tr><td>Oliveira Trust</td><td>Acionista + Administrador</td><td>~10% da Liqi</td></tr>
+                <tr><td>Galápagos</td><td>Acionista + VC</td><td>Pro-rata confirmado</td></tr>
+                <tr><td>Banco ABC</td><td>Cliente</td><td>3 operações ativas</td></tr>
+            </table>
+
+            <h3>Rodada US$ 10M (Series A)</h3>
+            <ul>
+                <li>Buscando lead para cheque ~US$ 6M</li>
+                <li>Pro-rata confirmado: Itaú, Pátria, OT, Galápagos</li>
+                <li>Roadshow: Blockchain Capital, Prosus, Kasek, VCs americanos</li>
+                <li>Próxima semana: reuniões Kasek, Canary e fundo gringo</li>
+            </ul>
+
+            <h3>Parcerias Comerciais em Exploração</h3>
+            <ul>
+                <li><strong>Estrata Capital</strong> — Recebíveis pulverizados (R$ 50-100M+ por esteira)</li>
+                <li><strong>Conta Cheia</strong> — Consignado privado com CR segregados (modelo inovador, 20-30 dias para token)</li>
+                <li><strong>OAT</strong> — API de PU para validação automática (2 meses tentando acesso)</li>
+            </ul>
+        </div>
+
+        <!-- ROADMAP -->
+        <div class="section">
+            <h2>7. Roadmap Estratégico</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Q1 2026 — Resolver a Casa</h4>
+                    <p>Integridade financeira (discrepância R$ 4,7M), sincronizar blockchain, validar patrimônios, atingir break-even ✅, fechar rodada US$ 10M</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Q2 2026 — Escalar</h4>
+                    <p>BRLD mar aberto, contratar dev júnior, 1ª operação Estrata+Conta Cheia, cancelar Jira, treinar time em Claude Code (27→270)</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Q3 2026 — Expandir</h4>
+                    <p>140 patrimônios, SCD aprovado BC, Whitney v2 (FIDICs), receita R$ 4-5M/mês</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Q4 2026 — Consolidar</h4>
+                    <p>SCD operacional, 200+ patrimônios, R$ 20M receita anual, preparar Series B (2027)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSÃO -->
+        <div class="section">
+            <h2>8. Conclusão</h2>
+            <div class="highlight-box green">
+                <p><strong>A Liqi não precisa de grandes inovações — precisa de consolidação operacional disciplinada.</strong></p>
+                <br>
+                <p>O moat real hoje é: <strong>CEO técnico + IA agressiva + licença S2 CVM + track record de 42 patrimônios</strong>. Mas é frágil porque depende de execução, não de rede.</p>
+                <br>
+                <p>O jogo final é: tantos emissores e investidores na plataforma que sair fica caro demais. <strong>Whitney pode ser esse moat se monetizado certo.</strong></p>
+                <br>
+                <p>Para ser a maior, a sequência é: <strong>arrumar a casa → escalar com IA → dominar com network effects.</strong></p>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center; padding: 30px; background: #1a1a2e; border-radius: 8px;">
+            <p style="color: #888;">Relatório compilado de <strong>29 reuniões</strong> (09-13/03/2026), <strong>218 scripts</strong>,<br><strong>42 patrimônios</strong> analisados, e <strong>10 blocos de dados RH</strong> processados.</p>
+            <p style="color: #e94560; margin-top: 10px; font-weight: 600;">Claude do Daniel — Visão Interna</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Liqi Digital Assets | Relatório gerado por Claude (Opus 4.6) | Março 2026</p>
+    </div>
+</body>
+</html>
