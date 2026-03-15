@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liqi Digital Assets — Investor Briefing 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #000; color: #e8e8e8; line-height: 1.6; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: radial-gradient(ellipse at 50% 0%, #1a0a3e 0%, #0a0a1a 60%, #000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(99, 55, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(0, 200, 150, 0.03) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(99, 55, 255, 0.15);
+            border: 1px solid rgba(99, 55, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #a78bfa;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #00c896 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #888;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
+        .hero-metrics {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-metric {
+            text-align: center;
+        }
+        .hero-metric .value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .hero-metric .value span { color: #00c896; }
+        .hero-metric .label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #1a1a1a;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .nav a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+        .nav a:hover { color: #fff; }
+
+        /* Sections */
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            color: #6337ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .section .lead {
+            font-size: 1.15rem;
+            color: #888;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin: 0;
+        }
+
+        /* Thesis Box */
+        .thesis {
+            background: linear-gradient(135deg, rgba(99, 55, 255, 0.08), rgba(0, 200, 150, 0.05));
+            border: 1px solid rgba(99, 55, 255, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .thesis h3 {
+            color: #a78bfa;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .thesis p {
+            color: #ccc;
+            font-size: 1.05rem;
+        }
+        .thesis .highlight {
+            color: #00c896;
+            font-weight: 600;
+        }
+
+        /* Metric Cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .metric-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            transition: border-color 0.3s;
+        }
+        .metric-card:hover { border-color: #333; }
+        .metric-card .value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .metric-card .value.green { color: #00c896; }
+        .metric-card .value.purple { color: #a78bfa; }
+        .metric-card .label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .metric-card .detail {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* Revenue Table */
+        .revenue-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        .revenue-table th {
+            text-align: left;
+            padding: 15px;
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .revenue-table td {
+            padding: 15px;
+            border-bottom: 1px solid #0d0d0d;
+            color: #ccc;
+        }
+        .revenue-table .growth {
+            color: #00c896;
+            font-weight: 600;
+        }
+
+        /* Vertical Cards */
+        .verticals-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .vertical-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .vertical-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+        .vertical-card.caas::before { background: linear-gradient(90deg, #6337ff, #a78bfa); }
+        .vertical-card.s2::before { background: linear-gradient(90deg, #00c896, #00e6a8); }
+        .vertical-card.whitney::before { background: linear-gradient(90deg, #ff6b6b, #ffa06b); }
+        .vertical-card.brld::before { background: linear-gradient(90deg, #ffd700, #ffaa00); }
+        .vertical-card .v-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .vertical-card.caas .v-tag { background: rgba(99, 55, 255, 0.15); color: #a78bfa; }
+        .vertical-card.s2 .v-tag { background: rgba(0, 200, 150, 0.15); color: #00c896; }
+        .vertical-card.whitney .v-tag { background: rgba(255, 107, 107, 0.15); color: #ff6b6b; }
+        .vertical-card.brld .v-tag { background: rgba(255, 215, 0, 0.15); color: #ffd700; }
+        .vertical-card h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .vertical-card .v-metric {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .vertical-card.caas .v-metric { color: #a78bfa; }
+        .vertical-card.s2 .v-metric { color: #00c896; }
+        .vertical-card.whitney .v-metric { color: #ff6b6b; }
+        .vertical-card.brld .v-metric { color: #ffd700; }
+        .vertical-card p { color: #888; font-size: 0.9rem; }
+        .vertical-card ul { list-style: none; padding: 0; margin-top: 12px; }
+        .vertical-card ul li {
+            color: #888;
+            font-size: 0.85rem;
+            padding: 4px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        .vertical-card ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: #444;
+        }
+
+        /* AI Section */
+        .ai-impact {
+            background: linear-gradient(135deg, #0d0d0d, #0a1a0d);
+            border: 1px solid #1a2e1a;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .ai-impact h3 {
+            color: #00c896;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .ai-stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 200, 150, 0.05);
+            border-radius: 10px;
+        }
+        .ai-stat .num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #00c896;
+        }
+        .ai-stat .desc {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            margin: 25px 0;
+        }
+        .before-after .arrow {
+            color: #00c896;
+            font-size: 1.5rem;
+        }
+        .ba-card {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .ba-card.before { background: rgba(255, 100, 100, 0.05); border: 1px solid rgba(255, 100, 100, 0.1); }
+        .ba-card.after { background: rgba(0, 200, 150, 0.05); border: 1px solid rgba(0, 200, 150, 0.1); }
+        .ba-card .ba-val { font-size: 1.5rem; font-weight: 700; }
+        .ba-card.before .ba-val { color: #ff6b6b; }
+        .ba-card.after .ba-val { color: #00c896; }
+        .ba-card .ba-label { font-size: 0.8rem; color: #888; margin-top: 5px; }
+
+        /* Competition */
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        .comp-table th {
+            text-align: left;
+            padding: 15px;
+            font-size: 0.7rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .comp-table td {
+            padding: 15px;
+            border-bottom: 1px solid #0d0d0d;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        .comp-table .check { color: #00c896; }
+        .comp-table .cross { color: #ff6b6b; }
+        .comp-table .partial { color: #ffd700; }
+        .comp-table tr:first-child td { color: #a78bfa; font-weight: 600; }
+
+        /* Market */
+        .market-opp {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .market-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        .market-card .m-icon { font-size: 2rem; margin-bottom: 15px; }
+        .market-card h4 { color: #fff; margin-bottom: 8px; }
+        .market-card p { color: #888; font-size: 0.85rem; }
+        .market-card .m-value { color: #a78bfa; font-weight: 700; font-size: 1.2rem; margin-top: 10px; }
+
+        /* Partners */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .partner-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .partner-card .p-name { color: #fff; font-weight: 600; font-size: 1rem; }
+        .partner-card .p-type { color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+        .partner-card .p-detail { color: #888; font-size: 0.8rem; margin-top: 8px; }
+
+        /* Roadmap */
+        .roadmap {
+            position: relative;
+            margin: 40px 0;
+        }
+        .roadmap-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: 135px;
+            top: 30px;
+            bottom: -30px;
+            width: 1px;
+            background: #1a1a1a;
+        }
+        .roadmap-item:last-child::before { display: none; }
+        .roadmap-period {
+            text-align: right;
+            padding-top: 5px;
+        }
+        .roadmap-period .quarter {
+            color: #a78bfa;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .roadmap-period .year {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        .roadmap-content {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 25px;
+            position: relative;
+        }
+        .roadmap-content::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 12px;
+            width: 14px;
+            height: 14px;
+            background: #6337ff;
+            border-radius: 50%;
+            border: 3px solid #000;
+        }
+        .roadmap-content h4 { color: #fff; margin-bottom: 8px; }
+        .roadmap-content p { color: #888; font-size: 0.9rem; }
+
+        /* Ask */
+        .ask-box {
+            background: linear-gradient(135deg, rgba(99, 55, 255, 0.1), rgba(0, 200, 150, 0.05));
+            border: 2px solid rgba(99, 55, 255, 0.3);
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .ask-box h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .ask-box .amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #a78bfa, #00c896);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+        }
+        .ask-box p { color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+        .use-of-funds {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .fund-item .fund-pct {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #a78bfa;
+        }
+        .fund-item .fund-label {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #1a1a1a;
+        }
+        .footer p { color: #444; font-size: 0.85rem; }
+        .footer .confidential {
+            color: #666;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-metrics { gap: 20px; }
+            .hero-metric .value { font-size: 1.8rem; }
+            .verticals-grid { grid-template-columns: 1fr; }
+            .ai-grid { grid-template-columns: repeat(2, 1fr); }
+            .market-opp { grid-template-columns: 1fr; }
+            .before-after { grid-template-columns: 1fr; }
+            .before-after .arrow { transform: rotate(90deg); text-align: center; }
+            .use-of-funds { grid-template-columns: 1fr; }
+            .roadmap-item { grid-template-columns: 1fr; }
+            .roadmap-period { text-align: left; }
+            .roadmap-item::before { display: none; }
+            .roadmap-content::before { display: none; }
+            .comp-table { font-size: 0.8rem; }
+            .comp-table th, .comp-table td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="badge">Investor Briefing — Março 2026</div>
+            <h1>Liqi Digital Assets</h1>
+            <p class="tagline">A primeira empresa AI-native de mercado de capitais do Brasil</p>
+            <div class="hero-metrics">
+                <div class="hero-metric">
+                    <div class="value">R$ <span>20M</span></div>
+                    <div class="label">Receita projetada 2026</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="value">R$ <span>1,3B</span></div>
+                    <div class="label">Volume sob gestão</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="value"><span>4</span></div>
+                    <div class="label">Verticais operando</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="value"><span>Break-even</span></div>
+                    <div class="label">Atingido março 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <div class="nav" id="nav">
+        <a href="#thesis">Tese</a>
+        <a href="#financials">Financeiro</a>
+        <a href="#verticals">Verticais</a>
+        <a href="#ai">IA</a>
+        <a href="#market">Mercado</a>
+        <a href="#competition">Concorrência</a>
+        <a href="#partners">Parceiros</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#ask">A Rodada</a>
+    </div>
+
+    <!-- THESIS -->
+    <div class="section" id="thesis">
+        <div class="section-label">Tese de Investimento</div>
+        <h2>Por que a Liqi agora</h2>
+        <p class="lead">A convergência de regulação, tecnologia e timing cria uma janela de oportunidade que não se repetirá.</p>
+
+        <div class="thesis">
+            <h3>A Oportunidade</h3>
+            <p>O mercado de capitais brasileiro movimenta <span class="highlight">R$ 5,9 trilhões/ano</span>. Menos de 0,1% é tokenizado. Com o Regime Fácil (março 2026), <span class="highlight">380.000 novas empresas</span> se tornam elegíveis para acessar o mercado de capitais. A Liqi é a infraestrutura que conecta esses emissores ao mercado — de forma digital, regulada e potencializada por IA.</p>
+        </div>
+
+        <div class="thesis">
+            <h3>O Moat Real</h3>
+            <p>Blockchain é commodity — todos os concorrentes usam. O diferencial da Liqi é ser <span class="highlight">a primeira empresa de mercado de capitais que opera como empresa de IA</span>. São 28 pessoas produzindo o output de centenas, usando IA generativa em todas as camadas da operação. Nenhum concorrente no Brasil replica isso hoje.</p>
+        </div>
+
+        <div class="thesis">
+            <h3>O Modelo</h3>
+            <p>Não competimos com bancos — <span class="highlight">somos a infraestrutura que bancos usam</span>. Itaú, Avenue, Porto Bank e outros já dependem da nossa plataforma. 4 verticais com cross-sell natural criam uma plataforma integrada de mercado de capitais digital.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- FINANCIALS -->
+    <div class="section" id="financials">
+        <div class="section-label">Financeiro</div>
+        <h2>Crescimento consistente com disciplina</h2>
+        <p class="lead">Atingimos break-even em março 2026 sem depender de capital externo para sobreviver.</p>
+
+        <table class="revenue-table">
+            <tr><th>Ano</th><th>Receita</th><th>Crescimento</th><th>Time</th><th>Receita/Pessoa</th></tr>
+            <tr><td>2023</td><td>R$ 1M</td><td>—</td><td>~40</td><td>R$ 25K</td></tr>
+            <tr><td>2024</td><td>R$ 3M</td><td class="growth">+200%</td><td>~38</td><td>R$ 79K</td></tr>
+            <tr><td>2025</td><td>~R$ 8M</td><td class="growth">+167%</td><td>~32</td><td>R$ 250K</td></tr>
+            <tr><td>2026 (proj.)</td><td>R$ 20M</td><td class="growth">+150%</td><td>28</td><td>R$ 714K</td></tr>
+        </table>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="value green">R$ 1,3B</div>
+                <div class="label">Volume sob gestão</div>
+                <div class="detail">42 patrimônios ativos, meta 140 em 2026</div>
+            </div>
+            <div class="metric-card">
+                <div class="value green">R$ 600M</div>
+                <div class="label">Volume CaaS Q1/2026</div>
+                <div class="detail">Itaú, Avenue, Porto, Melios</div>
+            </div>
+            <div class="metric-card">
+                <div class="value purple">28x</div>
+                <div class="label">Aumento receita/pessoa</div>
+                <div class="detail">De R$ 25K (2023) para R$ 714K (2026)</div>
+            </div>
+            <div class="metric-card">
+                <div class="value purple">~R$ 12M</div>
+                <div class="label">Orçamento anual</div>
+                <div class="detail">Reduzido de R$ 16M via eficiência com IA</div>
+            </div>
+        </div>
+
+        <div class="thesis">
+            <h3>Unit Economics</h3>
+            <p>Receita mensal: ~R$ 1M (CaaS ~R$ 700K + Securitização ~R$ 300K). Despesa mensal: ~R$ 1M. <span class="highlight">Break-even atingido.</span> Projeção março: R$ 1,4M. Captamos para acelerar, não para sobreviver.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- VERTICALS -->
+    <div class="section" id="verticals">
+        <div class="section-label">Plataforma</div>
+        <h2>4 verticais, 1 infraestrutura</h2>
+        <p class="lead">Cada vertical alimenta as outras. Cliente entra por uma, usa todas.</p>
+
+        <div class="verticals-grid">
+            <div class="vertical-card caas">
+                <span class="v-tag">40% da receita</span>
+                <h3>CaaS — Crypto as a Service</h3>
+                <div class="v-metric">R$ 600M vol. Q1</div>
+                <p>Infraestrutura white-label de negociação cripto para grandes instituições.</p>
+                <ul>
+                    <li>Itaú (maior cliente), Avenue, Porto Bank, Melios</li>
+                    <li>~R$ 700K/mês de receita recorrente</li>
+                    <li>V2 em homologação: desmembramento de spread</li>
+                    <li>Dashboard compartilhado com Itaú (Datadog)</li>
+                </ul>
+            </div>
+
+            <div class="vertical-card s2">
+                <span class="v-tag">60% da receita</span>
+                <h3>Securitizadora S2 + Protocolo TDIC</h3>
+                <div class="v-metric">R$ 1,3B sob gestão</div>
+                <p>Securitização digital de dívida estruturada com smart contracts EVM.</p>
+                <ul>
+                    <li>Licença S2 CVM (nov/2025) + Anbima homologada</li>
+                    <li>12 smart contracts: passivo → waterfall → treasury → cessão → PDD</li>
+                    <li>42 patrimônios ativos, meta 140 em 2026</li>
+                    <li>Clientes: Itaú BBA, Banco ABC, BV, Milênio, Fibra</li>
+                </ul>
+            </div>
+
+            <div class="vertical-card whitney">
+                <span class="v-tag">Diferencial competitivo</span>
+                <h3>Whitney — Agente IA de Operações</h3>
+                <div class="v-metric">288 pessoas monitoradas</div>
+                <p>Único agente IA do mercado que organiza operações estruturadas CVM 160.</p>
+                <ul>
+                    <li>5 operações ativas (Itaú, ABC, VBSO)</li>
+                    <li>52 empresas, 247+ documentos por operação</li>
+                    <li>Ex.: Op. Neon — 107 participantes, 19 versões de escritura</li>
+                    <li>Clientes pedem expansão: FIDICs + acompanhamento pós-liquidação</li>
+                </ul>
+            </div>
+
+            <div class="vertical-card brld">
+                <span class="v-tag">Novo — lançamento abril 2026</span>
+                <h3>BRLD — Stablecoin de Reais</h3>
+                <div class="v-metric">95% CDI</div>
+                <p>Stablecoin lastreada em LFT (Tesouro Nacional) com yield nativo.</p>
+                <ul>
+                    <li>Rende 95% CDI vs 80% de compromissadas bancárias</li>
+                    <li>Consultoria jurídica: Pinheiro Neto</li>
+                    <li>Lançamento "mar aberto" final de abril 2026</li>
+                    <li>Trojan horse: entrada para cross-sell das outras verticais</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- AI -->
+    <div class="section" id="ai">
+        <div class="section-label">O Diferencial</div>
+        <h2>AI-Native Operations</h2>
+        <p class="lead">A Liqi não "usa IA". A Liqi opera como uma empresa de IA que faz mercado de capitais.</p>
+
+        <div class="ai-impact">
+            <h3>O Projeto 27→270</h3>
+            <p style="color: #ccc; margin-bottom: 25px;">Cada pessoa da Liqi produz como se fossem 10, usando IA generativa em todas as camadas da operação.</p>
+
+            <div class="ai-grid">
+                <div class="ai-stat">
+                    <div class="num">78%</div>
+                    <div class="desc">Redução time tech</div>
+                </div>
+                <div class="ai-stat">
+                    <div class="num">487</div>
+                    <div class="desc">Entregas em 30 dias</div>
+                </div>
+                <div class="ai-stat">
+                    <div class="num">$3.5K</div>
+                    <div class="desc">Custo IA/mês</div>
+                </div>
+                <div class="ai-stat">
+                    <div class="num">28x</div>
+                    <div class="desc">Receita/pessoa em 3 anos</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h4 style="color: #00c896; margin-bottom: 15px;">Antes vs Depois da IA</h4>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-val">23 devs</div>
+                        <div class="ba-label">Time tech anterior</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="ba-card after">
+                        <div class="ba-val">5 devs</div>
+                        <div class="ba-label">Time tech atual, mesmo output</div>
+                    </div>
+                </div>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-val">Zendesk ($5K/mês)</div>
+                        <div class="ba-label">Plataforma de suporte</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="ba-card after">
+                        <div class="ba-val">Central Liqi (1.5 dia)</div>
+                        <div class="ba-label">7 módulos construídos com IA</div>
+                    </div>
+                </div>
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <div class="ba-val">Jira ($10K/mês)</div>
+                        <div class="ba-label">Gestão de projetos</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="ba-card after">
+                        <div class="ba-val">Kanban próprio</div>
+                        <div class="ba-label">Criado por funcionária não-dev com IA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="thesis">
+            <h3>Case Real: Lia — Bot de Investimentos</h3>
+            <p>Agente IA no WhatsApp que atende investidores pós-liquidação. <span class="highlight">600+ investidores atendidos, V11 do algoritmo.</span> Uma investidora conversou com a Lia e investiu R$ 10K — conversão real via IA. O futuro do atendimento financeiro já opera na Liqi.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- MARKET -->
+    <div class="section" id="market">
+        <div class="section-label">Mercado</div>
+        <h2>Timing regulatório perfeito</h2>
+        <p class="lead">Três mudanças regulatórias convergem em 2026 para abrir o mercado.</p>
+
+        <div class="market-opp">
+            <div class="market-card">
+                <div class="m-icon">📋</div>
+                <h4>Regime Fácil</h4>
+                <p>Resoluções 231/232 entram em vigor em março 2026. Simplifica acesso ao mercado de capitais.</p>
+                <div class="m-value">380.000 empresas elegíveis</div>
+            </div>
+            <div class="market-card">
+                <div class="m-icon">📈</div>
+                <h4>CVM 88 Reformada</h4>
+                <p>Cap de captação sobe de R$ 15M para R$ 25M. Consulta pública encerrada dez/2025.</p>
+                <div class="m-value">+67% no limite por oferta</div>
+            </div>
+            <div class="market-card">
+                <div class="m-icon">🏦</div>
+                <h4>DREX + B3</h4>
+                <p>CBDC do Banco Central + plataforma de tokenização da B3 em desenvolvimento.</p>
+                <div class="m-value">Settlement atômico (DvP)</div>
+            </div>
+        </div>
+
+        <div class="thesis">
+            <h3>TAM → SAM → SOM</h3>
+            <p><strong>TAM:</strong> R$ 5,9T (mercado de capitais brasileiro) → <strong>SAM:</strong> ~R$ 500B (dívida estruturada + crédito privado tokenizável) → <strong>SOM:</strong> ~R$ 50B (primeiros 10% digitalizados até 2028). A Liqi precisa capturar <span class="highlight">2-5% do SOM</span> para se tornar a maior.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- COMPETITION -->
+    <div class="section" id="competition">
+        <div class="section-label">Competição</div>
+        <h2>Landscape competitivo</h2>
+        <p class="lead">Ninguém combina securitização regulada + CaaS + IA + stablecoin.</p>
+
+        <table class="comp-table">
+            <tr>
+                <th>Capability</th>
+                <th>Liqi</th>
+                <th>VERT</th>
+                <th>MB</th>
+                <th>BEE4</th>
+                <th>Credix</th>
+                <th>Hurst</th>
+            </tr>
+            <tr>
+                <td>Securitizadora Regulada</td>
+                <td class="check">✓ S2 CVM</td>
+                <td class="partial">~ CRA/CRI</td>
+                <td class="cross">✗</td>
+                <td class="check">✓ CVM</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td>CaaS White-Label</td>
+                <td class="check">✓ Itaú+</td>
+                <td class="cross">✗</td>
+                <td class="partial">~ próprio</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td>Agente IA (Whitney)</td>
+                <td class="check">✓ Único</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="partial">~ Credit</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td>Stablecoin BRL</td>
+                <td class="check">✓ BRLD</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td>AI-Native Ops</td>
+                <td class="check">✓ 27→270</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+                <td class="partial">~ Parcial</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td>Mercado Secundário</td>
+                <td class="cross">✗ Em plano</td>
+                <td class="cross">✗</td>
+                <td class="partial">~ Exchange</td>
+                <td class="check">✓ Regulado</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+            </tr>
+            <tr>
+                <td>Volume Tokenizado</td>
+                <td class="partial">R$ 1,3B</td>
+                <td class="check">R$ 3,84B</td>
+                <td class="check">R$ 1B+</td>
+                <td class="partial">Crescendo</td>
+                <td class="check">US$ 165M cap</td>
+                <td class="check">R$ 1B+</td>
+            </tr>
+        </table>
+
+        <div class="thesis">
+            <h3>Benchmarks Internacionais</h3>
+            <p><strong>Securitize:</strong> US$ 1,25B valuation — virou infraestrutura regulada nos EUA, parceira BlackRock. <strong>iCapital:</strong> US$ 7,5B valuation — camada de wealth management. <strong>Centrifuge:</strong> US$ 1B+ TVL — protocolo DeFi de RWA. <span class="highlight">O prêmio é ser infraestrutura que outros dependem.</span> É exatamente o que a Liqi está construindo.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- PARTNERS -->
+    <div class="section" id="partners">
+        <div class="section-label">Ecossistema</div>
+        <h2>Parceiros estratégicos</h2>
+        <p class="lead">O segundo maior acionista é o maior banco da América Latina.</p>
+
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="p-name">Itaú BBA</div>
+                <div class="p-type">Acionista + Cliente</div>
+                <div class="p-detail">2° maior acionista. R$ 600M+ CaaS. 4 operações Whitney.</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Pátria</div>
+                <div class="p-type">Acionista + VC</div>
+                <div class="p-detail">Pro-rata confirmado para rodada atual</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Oliveira Trust</div>
+                <div class="p-type">Acionista + Administrador</div>
+                <div class="p-detail">~10% da Liqi. Agente fiduciário.</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Galápagos</div>
+                <div class="p-type">Acionista + VC</div>
+                <div class="p-detail">Pro-rata confirmado para rodada atual</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Banco ABC</div>
+                <div class="p-type">Cliente</div>
+                <div class="p-detail">3 operações CVM 160 em andamento</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Avenue / Even</div>
+                <div class="p-type">Cliente CaaS</div>
+                <div class="p-detail">Infra de cripto white-label</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Porto Bank</div>
+                <div class="p-type">Cliente CaaS</div>
+                <div class="p-detail">~R$ 100K/mês receita</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Pinheiro Neto</div>
+                <div class="p-type">Consultoria Jurídica</div>
+                <div class="p-detail">Estruturação BRLD</div>
+            </div>
+        </div>
+
+        <div class="thesis">
+            <h3>Pipeline Comercial</h3>
+            <p>Parcerias em exploração com <span class="highlight">Estrata Capital</span> (recebíveis pulverizados, R$ 50-100M+ por esteira), <span class="highlight">Conta Cheia</span> (consignado privado com CR segregados — modelo inovador), e conversas com <span class="highlight">XP, Bradesco e Banco BV</span>. O pipeline de operações S2 está em aceleração.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ROADMAP -->
+    <div class="section" id="roadmap">
+        <div class="section-label">Execução</div>
+        <h2>Roadmap estratégico</h2>
+        <p class="lead">De infraestrutura para plataforma dominante em 24 meses.</p>
+
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <div class="roadmap-period">
+                    <div class="quarter">Q2 2026</div>
+                    <div class="year">Escalar</div>
+                </div>
+                <div class="roadmap-content">
+                    <h4>Lançar BRLD "mar aberto" + Fechar rodada US$ 10M</h4>
+                    <p>BRLD aberto ao público final de abril. Treinar primeira onda de funcionários em IA (Projeto 27→270). Operações com Estrata Capital e Conta Cheia. Cancelar Jira (~R$ 10K/mês economia).</p>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-period">
+                    <div class="quarter">Q3 2026</div>
+                    <div class="year">Expandir</div>
+                </div>
+                <div class="roadmap-content">
+                    <h4>140 patrimônios + SCD no Banco Central</h4>
+                    <p>Alcançar 140 patrimônios ativos. Licença SCD aprovada pelo Banco Central. Whitney v2 (FIDICs + lastro pós-liquidação). Expandir time tech com devs treinados em IA.</p>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-period">
+                    <div class="quarter">Q4 2026</div>
+                    <div class="year">Consolidar</div>
+                </div>
+                <div class="roadmap-content">
+                    <h4>R$ 20M receita + SCD operacional</h4>
+                    <p>200+ patrimônios sob gestão. SCD operacional (bancarização própria). API self-service para emissores. Preparar Series B.</p>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-period">
+                    <div class="quarter">2027</div>
+                    <div class="year">Dominar</div>
+                </div>
+                <div class="roadmap-content">
+                    <h4>Infraestrutura de referência + Series B</h4>
+                    <p>Mercado secundário (parceria exchange + integração B3). White-label B2B2C para bancos e corretoras. Whitney como SaaS standalone. Meta R$ 5B+ tokenizados. Series B US$ 50-100M.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- THE ASK -->
+    <div class="section" id="ask">
+        <div class="section-label">A Rodada</div>
+        <h2>Series A — US$ 10M</h2>
+        <p class="lead">Capital para acelerar, não para sobreviver.</p>
+
+        <div class="ask-box">
+            <h3>Series A</h3>
+            <div class="amount">US$ 10M</div>
+            <p>Com break-even atingido e R$ 20M em receita projetada, captamos para acelerar a transição de empresa de serviço para plataforma de infraestrutura de mercado de capitais.</p>
+
+            <div class="use-of-funds">
+                <div class="fund-item">
+                    <div class="fund-pct">40%</div>
+                    <div class="fund-label">Produto & Tech<br><small style="color: #555;">API self-service, mercado secundário, SCD</small></div>
+                </div>
+                <div class="fund-item">
+                    <div class="fund-pct">35%</div>
+                    <div class="fund-label">Crescimento Comercial<br><small style="color: #555;">Time de vendas, parcerias bancárias, marketing</small></div>
+                </div>
+                <div class="fund-item">
+                    <div class="fund-pct">25%</div>
+                    <div class="fund-label">Operação & Compliance<br><small style="color: #555;">SCD, licenças, infraestrutura regulatória</small></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="thesis">
+            <h3>Pro-rata confirmado</h3>
+            <p><span class="highlight">Itaú, Pátria, Oliveira Trust e Galápagos</span> confirmaram exercício de pro-rata. Buscamos lead investor para cheque de ~US$ 6M. Roadshow ativo com Kaszek, Canary, Blockchain Capital, Prosus e VCs americanos.</p>
+        </div>
+
+        <div class="metrics-grid" style="margin-top: 30px;">
+            <div class="metric-card">
+                <div class="value green">R$ 20M</div>
+                <div class="label">Receita 2026</div>
+                <div class="detail">60% securitização + 40% CaaS</div>
+            </div>
+            <div class="metric-card">
+                <div class="value green">Break-even</div>
+                <div class="label">Status março 2026</div>
+                <div class="detail">Sem dependência de capital externo</div>
+            </div>
+            <div class="metric-card">
+                <div class="value purple">140</div>
+                <div class="label">Patrimônios meta 2026</div>
+                <div class="detail">De 42 atuais (3.3x)</div>
+            </div>
+            <div class="metric-card">
+                <div class="value purple">R$ 5B+</div>
+                <div class="label">Meta tokenizado 2027</div>
+                <div class="detail">De R$ 1,3B atuais</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team note -->
+    <div class="section" style="padding-bottom: 40px;">
+        <div class="section-label">Liderança</div>
+        <h2>Time fundador</h2>
+        <div class="thesis">
+            <h3>Daniel Coquieri — CEO & CTO</h3>
+            <p>CEO técnico que codifica com IA, opera 11 sessões simultâneas de Claude Code, e fez 487 entregas em 30 dias. <span class="highlight">10 anos nos EUA, fluente em inglês, rede de contatos no Vale do Silício.</span> A combinação rara de visão de negócio + execução técnica que define as empresas que escalam.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>Liqi Digital Assets | Investor Briefing | Março 2026</p>
+        <p class="confidential">Confidencial — Preparado para investidores e acionistas</p>
+        <p style="color: #333; margin-top: 20px; font-size: 0.75rem;">Página gerada por dois agentes Claude (Opus 4.6) — visão interna + visão externa combinadas</p>
+    </div>
+</body>
+</html>
