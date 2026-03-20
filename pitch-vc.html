@@ -99,6 +99,9 @@
             padding: 15px 0;
             text-align: center;
         }
+        .nav-links {
+            display: inline;
+        }
         .nav a {
             color: #888;
             text-decoration: none;
@@ -109,6 +112,95 @@
             letter-spacing: 0.5px;
         }
         .nav a:hover { color: #fff; }
+
+        /* Hamburger */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            position: relative;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #888;
+            margin: 5px auto;
+            transition: all 0.3s;
+            border-radius: 1px;
+        }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile drawer */
+        .nav-drawer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-drawer.open { display: flex; }
+        .nav-drawer a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 12px 20px;
+            transition: color 0.2s;
+            letter-spacing: 0.5px;
+        }
+        .nav-drawer a:hover { color: #fff; }
+
+        /* Competition cards (mobile) */
+        .comp-cards-mobile { display: none; }
+        .comp-card-m {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .comp-card-m .comp-name {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .comp-card-m .comp-name.liqi {
+            color: #a78bfa;
+            border-bottom-color: rgba(99, 55, 255, 0.3);
+        }
+        .comp-card-m .comp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+        }
+        .comp-card-m .comp-cap {
+            color: #888;
+            font-size: 0.82rem;
+        }
+        .comp-card-m .comp-val {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
 
         /* Sections */
         .section {
@@ -538,9 +630,10 @@
             .hero-metric .value { font-size: 1.6rem; }
             .hero-metric .label { font-size: 0.7rem; }
 
-            .nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 12px 10px; scrollbar-width: none; }
-            .nav::-webkit-scrollbar { display: none; }
-            .nav a { margin: 0 10px; font-size: 0.8rem; }
+            /* Hamburger nav */
+            .nav { padding: 10px 16px; }
+            .nav-links { display: none; }
+            .nav-toggle { display: block; }
 
             .section { padding: 60px 16px; }
             .section h2 { font-size: 1.8rem; }
@@ -571,8 +664,9 @@
 
             .market-opp { grid-template-columns: 1fr; gap: 16px; }
 
-            .comp-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .comp-table th, .comp-table td { padding: 10px 8px; font-size: 0.78rem; white-space: nowrap; }
+            /* Competition: cards instead of table */
+            .comp-table { display: none; }
+            .comp-cards-mobile { display: block; }
 
             .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .partner-card { padding: 16px; }
@@ -597,8 +691,6 @@
             .hero .badge { font-size: 0.75rem; padding: 5px 12px; margin-bottom: 20px; }
             .hero-metrics { flex-direction: column; gap: 12px; align-items: center; }
             .hero-metric .value { font-size: 1.5rem; }
-
-            .nav a { margin: 0 8px; font-size: 0.75rem; }
 
             .section { padding: 40px 12px; }
             .section h2 { font-size: 1.5rem; }
@@ -684,15 +776,33 @@
 
     <!-- NAV -->
     <div class="nav" id="nav">
-        <a href="#thesis">Tese</a>
-        <a href="#financials">Financeiro</a>
-        <a href="#verticals">Verticais</a>
-        <a href="#ai">IA</a>
-        <a href="#market">Mercado</a>
-        <a href="#competition">Concorrência</a>
-        <a href="#partners">Parceiros</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#ask">A Rodada</a>
+        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="#thesis">Tese</a>
+            <a href="#financials">Financeiro</a>
+            <a href="#verticals">Verticais</a>
+            <a href="#ai">IA</a>
+            <a href="#market">Mercado</a>
+            <a href="#competition">Concorrência</a>
+            <a href="#partners">Parceiros</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#ask">A Rodada</a>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="nav-drawer" id="navDrawer">
+        <a href="#thesis" onclick="closeMenu()">Tese</a>
+        <a href="#financials" onclick="closeMenu()">Financeiro</a>
+        <a href="#verticals" onclick="closeMenu()">Verticais</a>
+        <a href="#ai" onclick="closeMenu()">IA</a>
+        <a href="#market" onclick="closeMenu()">Mercado</a>
+        <a href="#competition" onclick="closeMenu()">Concorrência</a>
+        <a href="#partners" onclick="closeMenu()">Parceiros</a>
+        <a href="#roadmap" onclick="closeMenu()">Roadmap</a>
+        <a href="#ask" onclick="closeMenu()">A Rodada</a>
     </div>
 
     <!-- THESIS -->
@@ -1018,6 +1128,70 @@
             </tr>
         </table>
 
+        <!-- Competition cards for mobile -->
+        <div class="comp-cards-mobile">
+            <div class="comp-card-m">
+                <div class="comp-name liqi">Liqi</div>
+                <div class="comp-row"><span class="comp-cap">Securitizadora Regulada</span><span class="comp-val check">✓ S2 CVM</span></div>
+                <div class="comp-row"><span class="comp-cap">CaaS White-Label</span><span class="comp-val check">✓ Itaú+</span></div>
+                <div class="comp-row"><span class="comp-cap">Agente IA (Whitney)</span><span class="comp-val check">✓ Único</span></div>
+                <div class="comp-row"><span class="comp-cap">Stablecoin BRL</span><span class="comp-val check">✓ BRLD</span></div>
+                <div class="comp-row"><span class="comp-cap">AI-Native Ops</span><span class="comp-val check">✓ 27→270</span></div>
+                <div class="comp-row"><span class="comp-cap">Mercado Secundário</span><span class="comp-val cross">✗ Em plano</span></div>
+                <div class="comp-row"><span class="comp-cap">Volume Tokenizado</span><span class="comp-val partial">R$ 1,3B</span></div>
+            </div>
+            <div class="comp-card-m">
+                <div class="comp-name">VERT</div>
+                <div class="comp-row"><span class="comp-cap">Securitizadora Regulada</span><span class="comp-val partial">~ CRA/CRI</span></div>
+                <div class="comp-row"><span class="comp-cap">CaaS White-Label</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Agente IA</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Stablecoin BRL</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">AI-Native Ops</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Mercado Secundário</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Volume Tokenizado</span><span class="comp-val check">R$ 3,84B</span></div>
+            </div>
+            <div class="comp-card-m">
+                <div class="comp-name">MB</div>
+                <div class="comp-row"><span class="comp-cap">Securitizadora Regulada</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">CaaS White-Label</span><span class="comp-val partial">~ próprio</span></div>
+                <div class="comp-row"><span class="comp-cap">Agente IA</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Stablecoin BRL</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">AI-Native Ops</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Mercado Secundário</span><span class="comp-val partial">~ Exchange</span></div>
+                <div class="comp-row"><span class="comp-cap">Volume Tokenizado</span><span class="comp-val check">R$ 1B+</span></div>
+            </div>
+            <div class="comp-card-m">
+                <div class="comp-name">BEE4</div>
+                <div class="comp-row"><span class="comp-cap">Securitizadora Regulada</span><span class="comp-val check">✓ CVM</span></div>
+                <div class="comp-row"><span class="comp-cap">CaaS White-Label</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Agente IA</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Stablecoin BRL</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">AI-Native Ops</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Mercado Secundário</span><span class="comp-val check">✓ Regulado</span></div>
+                <div class="comp-row"><span class="comp-cap">Volume Tokenizado</span><span class="comp-val partial">Crescendo</span></div>
+            </div>
+            <div class="comp-card-m">
+                <div class="comp-name">Credix</div>
+                <div class="comp-row"><span class="comp-cap">Securitizadora Regulada</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">CaaS White-Label</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Agente IA</span><span class="comp-val partial">~ Credit</span></div>
+                <div class="comp-row"><span class="comp-cap">Stablecoin BRL</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">AI-Native Ops</span><span class="comp-val partial">~ Parcial</span></div>
+                <div class="comp-row"><span class="comp-cap">Mercado Secundário</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Volume Tokenizado</span><span class="comp-val check">US$ 165M cap</span></div>
+            </div>
+            <div class="comp-card-m">
+                <div class="comp-name">Hurst</div>
+                <div class="comp-row"><span class="comp-cap">Securitizadora Regulada</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">CaaS White-Label</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Agente IA</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Stablecoin BRL</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">AI-Native Ops</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Mercado Secundário</span><span class="comp-val cross">✗</span></div>
+                <div class="comp-row"><span class="comp-cap">Volume Tokenizado</span><span class="comp-val check">R$ 1B+</span></div>
+            </div>
+        </div>
+
         <div class="thesis">
             <h3>Benchmarks Internacionais</h3>
             <p><strong>Securitize:</strong> US$ 1,25B valuation — virou infraestrutura regulada nos EUA, parceira BlackRock. <strong>iCapital:</strong> US$ 7,5B valuation — camada de wealth management. <strong>Centrifuge:</strong> US$ 1B+ TVL — protocolo DeFi de RWA. <span class="highlight">O prêmio é ser infraestrutura que outros dependem.</span> É exatamente o que a Liqi está construindo.</p>
@@ -1072,6 +1246,11 @@
                 <div class="p-name">Pinheiro Neto</div>
                 <div class="p-type">Consultoria Jurídica</div>
                 <div class="p-detail">Estruturação BRLD</div>
+            </div>
+            <div class="partner-card">
+                <div class="p-name">Banco BV</div>
+                <div class="p-type">Cliente</div>
+                <div class="p-detail">Operações de securitização digital</div>
             </div>
             <div class="partner-card">
                 <div class="p-name">VBSO Advogados</div>
@@ -1216,5 +1395,22 @@
         <p class="confidential">Confidencial — Preparado para investidores e acionistas</p>
         <p style="color: #333; margin-top: 20px; font-size: 0.75rem;">Página gerada por dois agentes Claude (Opus 4.6) — visão interna + visão externa combinadas</p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            var btn = document.querySelector('.nav-toggle');
+            var drawer = document.getElementById('navDrawer');
+            btn.classList.toggle('active');
+            drawer.classList.toggle('open');
+            document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+        }
+        function closeMenu() {
+            var btn = document.querySelector('.nav-toggle');
+            var drawer = document.getElementById('navDrawer');
+            btn.classList.remove('active');
+            drawer.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>
