@@ -529,23 +529,128 @@
             margin-top: 10px;
         }
 
-        /* Responsive */
+        /* Responsive — Tablet */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero-metrics { gap: 20px; }
-            .hero-metric .value { font-size: 1.8rem; }
+            .hero { padding: 40px 16px; min-height: auto; padding-top: 80px; padding-bottom: 60px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero .tagline { font-size: 1.15rem; margin-bottom: 30px; }
+            .hero-metrics { gap: 16px; }
+            .hero-metric .value { font-size: 1.6rem; }
+            .hero-metric .label { font-size: 0.7rem; }
+
+            .nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 12px 10px; scrollbar-width: none; }
+            .nav::-webkit-scrollbar { display: none; }
+            .nav a { margin: 0 10px; font-size: 0.8rem; }
+
+            .section { padding: 60px 16px; }
+            .section h2 { font-size: 1.8rem; }
+            .section .lead { font-size: 1rem; }
+
+            .thesis { padding: 24px; margin: 24px 0; }
+            .thesis h3 { font-size: 1.1rem; }
+            .thesis p { font-size: 0.95rem; }
+
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .metric-card { padding: 20px; }
+            .metric-card .value { font-size: 1.6rem; }
+
+            .revenue-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .revenue-table th, .revenue-table td { white-space: nowrap; padding: 12px 10px; font-size: 0.85rem; }
+
             .verticals-grid { grid-template-columns: 1fr; }
-            .ai-grid { grid-template-columns: repeat(2, 1fr); }
-            .market-opp { grid-template-columns: 1fr; }
-            .before-after { grid-template-columns: 1fr; }
-            .before-after .arrow { transform: rotate(90deg); text-align: center; }
-            .use-of-funds { grid-template-columns: 1fr; }
-            .roadmap-item { grid-template-columns: 1fr; }
-            .roadmap-period { text-align: left; }
+            .vertical-card { padding: 24px; }
+
+            .ai-impact { padding: 24px; }
+            .ai-impact h3 { font-size: 1.2rem; }
+            .ai-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .ai-stat { padding: 16px; }
+            .ai-stat .num { font-size: 1.5rem; }
+
+            .before-after { grid-template-columns: 1fr; gap: 10px; }
+            .before-after .arrow { transform: rotate(90deg); text-align: center; font-size: 1.2rem; }
+
+            .market-opp { grid-template-columns: 1fr; gap: 16px; }
+
+            .comp-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .comp-table th, .comp-table td { padding: 10px 8px; font-size: 0.78rem; white-space: nowrap; }
+
+            .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .partner-card { padding: 16px; }
+
+            .roadmap-item { grid-template-columns: 1fr; gap: 10px; }
+            .roadmap-period { text-align: left; display: flex; gap: 8px; align-items: baseline; }
             .roadmap-item::before { display: none; }
             .roadmap-content::before { display: none; }
-            .comp-table { font-size: 0.8rem; }
-            .comp-table th, .comp-table td { padding: 10px 8px; }
+            .roadmap-content { padding: 20px; }
+
+            .ask-box { padding: 30px 20px; }
+            .ask-box h3 { font-size: 1.5rem; }
+            .ask-box .amount { font-size: 2.5rem; }
+            .use-of-funds { grid-template-columns: 1fr; gap: 16px; }
+        }
+
+        /* Responsive — Mobile pequeno */
+        @media (max-width: 480px) {
+            .hero { padding: 60px 12px 40px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero .tagline { font-size: 1rem; margin-bottom: 24px; }
+            .hero .badge { font-size: 0.75rem; padding: 5px 12px; margin-bottom: 20px; }
+            .hero-metrics { flex-direction: column; gap: 12px; align-items: center; }
+            .hero-metric .value { font-size: 1.5rem; }
+
+            .nav a { margin: 0 8px; font-size: 0.75rem; }
+
+            .section { padding: 40px 12px; }
+            .section h2 { font-size: 1.5rem; }
+            .section .lead { font-size: 0.9rem; }
+            .section-label { font-size: 0.7rem; letter-spacing: 2px; }
+
+            .thesis { padding: 18px; margin: 18px 0; border-radius: 12px; }
+            .thesis h3 { font-size: 1rem; }
+            .thesis p { font-size: 0.88rem; }
+
+            .metrics-grid { grid-template-columns: 1fr; gap: 10px; }
+            .metric-card { padding: 18px; }
+            .metric-card .value { font-size: 1.4rem; }
+            .metric-card .label { font-size: 0.7rem; }
+            .metric-card .detail { font-size: 0.8rem; }
+
+            .vertical-card { padding: 20px; }
+            .vertical-card h3 { font-size: 1.05rem; }
+            .vertical-card .v-metric { font-size: 1.2rem; }
+            .vertical-card p { font-size: 0.85rem; }
+            .vertical-card ul li { font-size: 0.8rem; }
+
+            .ai-impact { padding: 18px; border-radius: 12px; }
+            .ai-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .ai-stat .num { font-size: 1.3rem; }
+            .ai-stat .desc { font-size: 0.68rem; }
+            .ba-card { padding: 14px; }
+            .ba-card .ba-val { font-size: 1.1rem; }
+            .ba-card .ba-label { font-size: 0.72rem; }
+
+            .market-card { padding: 20px; }
+            .market-card .m-icon { font-size: 1.5rem; margin-bottom: 10px; }
+            .market-card h4 { font-size: 0.95rem; }
+            .market-card p { font-size: 0.8rem; }
+            .market-card .m-value { font-size: 1rem; }
+
+            .partners-grid { grid-template-columns: 1fr; }
+            .partner-card { padding: 14px; }
+
+            .roadmap-content { padding: 16px; }
+            .roadmap-content h4 { font-size: 0.95rem; }
+            .roadmap-content p { font-size: 0.85rem; }
+
+            .ask-box { padding: 24px 16px; border-radius: 12px; }
+            .ask-box h3 { font-size: 1.3rem; }
+            .ask-box .amount { font-size: 2rem; }
+            .ask-box p { font-size: 0.88rem; }
+            .fund-item .fund-pct { font-size: 1.4rem; }
+            .fund-item .fund-label { font-size: 0.8rem; }
+
+            .footer { padding: 40px 12px; }
+            .footer p { font-size: 0.78rem; }
         }
     </style>
 </head>
